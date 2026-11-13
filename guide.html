@@ -22,6 +22,10 @@ backslash suggests commands; the palette under the box inserts symbols, structur
 <li>Press Enter to save, Shift+Enter for a new line, and Escape to cancel. A formula with an error shows
 the error and cannot be saved, so readers never see a broken formula.</li>
 <li>To change a formula, select it and click the edit button.</li>
+<li>A display equation is centred; choose <strong>Left</strong> or <strong>Right</strong> above the preview to put it against
+that edge of the page or table cell, its equation numbers still at the right.</li>
+<li>The palette&#39;s <strong>Style</strong> tab sets size (<code>{\large ...}</code>), weight (<code>\boldsymbol{...}</code>) and colour
+(<code>\textcolor{#1d7afc}{...}</code>); the colours read on both the light and the dark theme.</li>
 </ul>
 <p><strong>Typing dollar signs</strong></p>
 <p>Write <code>$x^2$</code> for an inline formula or put <code>$$\int_0^1 f(x)\,dx$$</code> on a line of its own for a display
@@ -39,15 +43,26 @@ Integrations → Mathwise LaTeX. For example <code>\newcommand{\R}{\mathbb{R}}</
 <code>\DeclareMathOperator{\tr}{tr}</code>. Inline formulas use a change at once; display equations and exports
 can take up to a day, because Confluence caches them.</p>
 <p><strong>Switching from another math app</strong></p>
-<p>A Confluence administrator opens Mathwise in Confluence administration, chooses spaces, clicks
+<p>A Confluence administrator opens Mathwise in Confluence administration, chooses spaces they
+administer, clicks
 <strong>Count formulas</strong> to see what each space holds, then <strong>Convert formulas</strong>. Formulas from LaTeX Math
-(Appfire), LaTeX Math+ (Narva), LaTeX for Confluence (Bertly) and Data Center LaTeX macros are
-converted in place. Each changed page gets one new version, so earlier versions stay in the page
+(Appfire), LaTeX Math+ (Narva), LaTeX for Confluence (Bertly), Mosaic and LaTeX Math Macro
+(Kolekti), AURA (Seibert), LaTeX Math (Fulstech), Beautiful Math (Elevatic), LaTeX EASY (Polaris
+Office) and Data Center LaTeX macros are converted in place. Each changed page gets one new version, so earlier versions stay in the page
 history. Anything Mathwise cannot convert stays exactly as it was and is listed with the reason.</p>
 <p><strong>Export, themes and supported LaTeX</strong></p>
-<p>Formulas appear in PDF and Word export and follow Confluence&#39;s light and dark themes. Mathwise renders
-with MathJax 4 and the AMS packages, mathtools, physics, mhchem, braket, cancel, color, enclose,
-amscd, boldsymbol, newcommand and textmacros.</p>
+<p>In page view an inline formula sits on the text line of the paragraph or table cell around it. In
+PDF and Word export Confluence places inline images itself, so a formula that reaches below the line,
+such as one with a fraction, can sit a little high there.</p>
+<p>Formulas appear in PDF and Word export and follow Confluence&#39;s light and dark themes. An inline
+formula is exported as an image that Mathwise stores once as an attachment of its page, uploaded as
+the person exporting, so only someone who may add attachments to the page creates it. Mathwise can
+upload for a person once they have opened the formula editor or viewed a page with an inline
+formula; Confluence records this without asking them. Until such a person exports the page, its
+inline formulas export as their LaTeX source; display formulas are always images. Confluence&#39;s
+Word export gives up on a page with more than about 240 inline formulas; export such a page to PDF,
+or split it. Mathwise renders with MathJax 4 and the AMS packages, mathtools, physics, mhchem, braket,
+cancel, color, enclose, amscd, boldsymbol, newcommand and textmacros.</p>
 <p><strong>Licensing</strong></p>
 <p>If a site&#39;s Mathwise license lapses, every formula stays visible and in exports, but new formulas
 cannot be saved, dollar signs are not converted and conversions cannot start until an admin renews it
